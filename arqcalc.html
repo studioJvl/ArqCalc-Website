@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArqCalc</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="title-div">
+      <h1>
+        <a class="title-text" href="arqcalc.html">ArqCalc</a>
+      </h1>
+      <h3 class="slogan-text">Simplificando a vida do projetista</h3>
+
+      <div class="search-box-div">
+        <input
+          class="search-box-input"
+          type="text"
+          placeholder="Pesquisar"
+          id="main-input"
+        />
+      </div>
+
+      <div class="info-div">
+        <button
+          class="social-media-button"
+          onclick="location.href = 'exercise-four.html'"
+        >
+          Social Media
+        </button>
+        <button class="about-button">About</button>
+      </div>
+    </div>
+
+    <div class="sidebar-div">
+      <div class="menu-div">
+        <p class="menu-text">MENU</p>
+      </div>
+
+      <div class="lateral-button-div">
+        <button class="area-construida-button">
+          <a style="color: white" href="">O que é área construída?</a>
+        </button>
+        <button class="indice-aproveitamento-button">
+          <a style="color: white" href="">O que é índice de aproveitamento?</a>
+        </button>
+        <button class="area-permeavel-button">
+          <a style="color: white" href="">O que é área permeável?</a>
+        </button>
+      </div>
+    </div>
+
+    <div class="function-div">
+      <div class="textbox-div">
+        <h2 class="aconst-text">Área Construída (%)</h2>
+        <p class="site-text">Insira o tamanho do lote (m²)</p>
+        <input
+          class="site-input"
+          id="ACinput-up-id"
+          type="text"
+          placeholder="(A)"
+        />
+        <p class="ac-text">Insira o tamanho da área construída térrea (m²)</p>
+        <input
+          class="dimension-input"
+          id="ACinput-down-id"
+          type="text"
+          placeholder="(B)"
+        />
+        <div class="calc-reset-button">
+          <button
+            class="calcular-button"
+            onclick="getValue('ACinput-up-id', 'ACinput-down-id', 'ACresult-id')"
+          >
+            Calcular
+          </button>
+          <button
+            class="calcular-button"
+            onclick="eraseValue('ACresult-id', 'ACinput-up-id', 'ACinput-down-id')"
+          >
+            Resetar
+          </button>
+        </div>
+      </div>
+      <div class="calculadora-container">
+        <input
+          class="calculadora-input"
+          type="text"
+          placeholder="Informação aqui"
+          disabled
+          id="calculadora-input-one"
+        />
+        <div>
+          <button
+            class="calc-button"
+            onclick="addInput('calculadora-input-one', 'ACinput-up-id')"
+          >
+            Adicionar (A)
+          </button>
+          <button
+            class="calc-button"
+            onclick="addInput('calculadora-input-one', 'ACinput-down-id')"
+          >
+            Adicionar (B)
+          </button>
+          <button
+            class="calc-button"
+            onclick="deleteValue('calculadora-input-one')"
+          >
+            Resetar
+          </button>
+        </div>
+        <div class="calculadora-div">
+          <button
+            id="one-button"
+            class="number-button"
+            onclick="getNumberCalc('one-button', 'calculadora-input-one')"
+          >
+            1
+          </button>
+          <button
+            id="two-button"
+            class="number-button"
+            onclick="getNumberCalc('two-button', 'calculadora-input-one')"
+          >
+            2
+          </button>
+          <button
+            id="three-button"
+            class="number-button"
+            onclick="getNumberCalc('three-button', 'calculadora-input-one')"
+          >
+            3
+          </button>
+          <button
+            id="four-button"
+            class="number-button"
+            onclick="getNumberCalc('four-button', 'calculadora-input-one')"
+          >
+            4
+          </button>
+          <button
+            id="five-button"
+            class="number-button"
+            onclick="getNumberCalc('five-button', 'calculadora-input-one')"
+          >
+            5
+          </button>
+          <button
+            id="six-button"
+            class="number-button"
+            onclick="getNumberCalc('six-button', 'calculadora-input-one')"
+          >
+            6
+          </button>
+          <button
+            id="seven-button"
+            class="number-button"
+            onclick="getNumberCalc('seven-button', 'calculadora-input-one')"
+          >
+            7
+          </button>
+          <button
+            id="eight-button"
+            class="number-button"
+            onclick="getNumberCalc('eight-button', 'calculadora-input-one')"
+          >
+            8
+          </button>
+          <button
+            id="nine-button"
+            class="number-button"
+            onclick="getNumberCalc('nine-button', 'calculadora-input-one')"
+          >
+            9
+          </button>
+          <button
+            id="zero-button"
+            class="number-button"
+            onclick="getNumberCalc('zero-button', 'calculadora-input-one')"
+          >
+            0
+          </button>
+          <button
+            id="point-button"
+            class="number-button"
+            onclick="getNumberCalc('point-button', 'calculadora-input-one')"
+          >
+            .
+          </button>
+        </div>
+      </div>
+
+      <div class="result-div-info">
+        <input
+          class="result-input"
+          type="text"
+          id="ACresult-id"
+          disabled
+          placeholder="Valor"
+        />
+      </div>
+    </div>
+
+    <div class="function-div">
+      <div class="textbox-div">
+        <h2 class="aconst-text">Índice de aproveitamento</h2>
+        <p class="site-text">Insira o tamanho do lote (m²)</p>
+        <input
+          class="site-input"
+          id="IAinput-up-id"
+          type="text"
+          placeholder="Lote (m²)"
+        />
+        <p class="ac-text">Insira o tamanho da área construída total (m²)</p>
+        <input
+          class="dimension-input"
+          id="IAinput-down-id"
+          type="text"
+          placeholder="Área construída total (m²)"
+        />
+        <div class="calc-reset-button">
+          <button class="calcular-button" onclick="getValueIA()">
+            Calcular
+          </button>
+          <button
+            class="calcular-button"
+            onclick="eraseValue('IAresult-id', 'IAinput-up-id', 'IAinput-down-id')"
+          >
+            Resetar
+          </button>
+        </div>
+      </div>
+
+      <div class="calculadora-container">
+        <input
+          class="calculadora-input"
+          type="text"
+          placeholder="Informação aqui"
+          disabled
+          id="calculadora-input-two"
+        />
+        <div>
+          <button
+            class="calc-button"
+            onclick="addInput('calculadora-input-two', 'IAinput-up-id')"
+          >
+            Adicionar (A)
+          </button>
+          <button
+            class="calc-button"
+            onclick="addInput('calculadora-input-two', 'IAinput-down-id')"
+          >
+            Adicionar (B)
+          </button>
+          <button
+            class="calc-button"
+            onclick="deleteValue('calculadora-input-two')"
+          >
+            Resetar
+          </button>
+        </div>
+        <div class="calculadora-div">
+          <button
+            id="one-button"
+            class="number-button"
+            onclick="getNumberCalc('one-button', 'calculadora-input-two')"
+          >
+            1
+          </button>
+          <button
+            id="two-button"
+            class="number-button"
+            onclick="getNumberCalc('two-button', 'calculadora-input-two')"
+          >
+            2
+          </button>
+          <button
+            id="three-button"
+            class="number-button"
+            onclick="getNumberCalc('three-button', 'calculadora-input-two')"
+          >
+            3
+          </button>
+          <button
+            id="four-button"
+            class="number-button"
+            onclick="getNumberCalc('four-button', 'calculadora-input-two')"
+          >
+            4
+          </button>
+          <button
+            id="five-button"
+            class="number-button"
+            onclick="getNumberCalc('five-button', 'calculadora-input-two')"
+          >
+            5
+          </button>
+          <button
+            id="six-button"
+            class="number-button"
+            onclick="getNumberCalc('six-button', 'calculadora-input-two')"
+          >
+            6
+          </button>
+          <button
+            id="seven-button"
+            class="number-button"
+            onclick="getNumberCalc('seven-button', 'calculadora-input-two')"
+          >
+            7
+          </button>
+          <button
+            id="eight-button"
+            class="number-button"
+            onclick="getNumberCalc('eight-button', 'calculadora-input-two')"
+          >
+            8
+          </button>
+          <button
+            id="nine-button"
+            class="number-button"
+            onclick="getNumberCalc('nine-button', 'calculadora-input-two')"
+          >
+            9
+          </button>
+          <button
+            id="zero-button"
+            class="number-button"
+            onclick="getNumberCalc('zero-button', 'calculadora-input-two')"
+          >
+            0
+          </button>
+          <button
+            id="point-button"
+            class="number-button"
+            onclick="getNumberCalc('point-button', 'calculadora-input-two')"
+          >
+            .
+          </button>
+        </div>
+      </div>
+
+      <div class="result-div-info">
+        <input
+          class="result-input"
+          type="text"
+          id="IAresult-id"
+          disabled
+          placeholder="Valor"
+        />
+      </div>
+    </div>
+
+    <div class="function-div">
+      <div class="textbox-div">
+        <h2 class="aconst-text">Taxa de Permeabilidade</h2>
+        <p class="site-text">Insira o tamanho do lote (m²)</p>
+        <input
+          class="site-input"
+          id="APinput-up-id"
+          type="text"
+          placeholder="Lote (m²)"
+        />
+        <p class="ac-text">Insira o tamanho da área permeável (m²)</p>
+        <input
+          class="dimension-input"
+          id="APinput-down-id"
+          type="text"
+          placeholder="Área permeável (m²)"
+        />
+        <div class="calc-reset-button">
+          <button
+            class="calcular-button"
+            onclick="getValue('APinput-up-id', 'APinput-down-id', 'APresult-id')"
+          >
+            Calcular
+          </button>
+          <button
+            class="calcular-button"
+            onclick="eraseValue('APresult-id', 'APinput-up-id', 'APinput-down-id')"
+          >
+            Resetar
+          </button>
+        </div>
+      </div>
+
+      <div class="calculadora-container">
+        <input
+          class="calculadora-input"
+          type="text"
+          placeholder="Informação aqui"
+          disabled
+          id="calculadora-input-three"
+        />
+        <div>
+          <button
+            class="calc-button"
+            onclick="addInput('calculadora-input-three', 'APinput-up-id')"
+          >
+            Adicionar (A)
+          </button>
+          <button
+            class="calc-button"
+            onclick="addInput('calculadora-input-three', 'APinput-down-id')"
+          >
+            Adicionar (B)
+          </button>
+          <button
+            class="calc-button"
+            onclick="deleteValue('calculadora-input-three')"
+          >
+            Resetar
+          </button>
+        </div>
+        <div class="calculadora-div">
+          <button
+            id="one-button"
+            class="number-button"
+            onclick="getNumberCalc('one-button', 'calculadora-input-three')"
+          >
+            1
+          </button>
+          <button
+            id="two-button"
+            class="number-button"
+            onclick="getNumberCalc('two-button', 'calculadora-input-three')"
+          >
+            2
+          </button>
+          <button
+            id="three-button"
+            class="number-button"
+            onclick="getNumberCalc('three-button', 'calculadora-input-three')"
+          >
+            3
+          </button>
+          <button
+            id="four-button"
+            class="number-button"
+            onclick="getNumberCalc('four-button', 'calculadora-input-three')"
+          >
+            4
+          </button>
+          <button
+            id="five-button"
+            class="number-button"
+            onclick="getNumberCalc('five-button', 'calculadora-input-three')"
+          >
+            5
+          </button>
+          <button
+            id="six-button"
+            class="number-button"
+            onclick="getNumberCalc('six-button', 'calculadora-input-three')"
+          >
+            6
+          </button>
+          <button
+            id="seven-button"
+            class="number-button"
+            onclick="getNumberCalc('seven-button', 'calculadora-input-three')"
+          >
+            7
+          </button>
+          <button
+            id="eight-button"
+            class="number-button"
+            onclick="getNumberCalc('eight-button', 'calculadora-input-three')"
+          >
+            8
+          </button>
+          <button
+            id="nine-button"
+            class="number-button"
+            onclick="getNumberCalc('nine-button', 'calculadora-input-three')"
+          >
+            9
+          </button>
+          <button
+            id="zero-button"
+            class="number-button"
+            onclick="getNumberCalc('zero-button', 'calculadora-input-three')"
+          >
+            0
+          </button>
+          <button
+            id="point-button"
+            class="number-button"
+            onclick="getNumberCalc('point-button', 'calculadora-input-three')"
+          >
+            .
+          </button>
+        </div>
+      </div>
+
+      <div class="result-div-info">
+        <input
+          class="result-input"
+          type="text"
+          id="APresult-id"
+          disabled
+          placeholder="Valor"
+        />
+      </div>
+    </div>
+
+    <div class="function-div-cd">
+      <div class="textbox-div-cd">
+        <h2 class="aconst-text">Cálculo de Caixa D'agua</h2>
+        <p class="pav-text">Insira a quantidade de pavimentos</p>
+        <input
+          class="pav-input"
+          id="CDinput-A-id"
+          type="text"
+          placeholder="(A)"
+        />
+
+        <p class="edif-text">
+          Insira a quantidade de edificações por pavimento
+        </p>
+        <input
+          class="edif-input"
+          id="CDinput-B-id"
+          type="text"
+          placeholder="(B)"
+        />
+
+        <p class="people-text">
+          Insira a quantidade de habitantes por edificação
+        </p>
+        <input
+          class="people-input"
+          id="CDinput-C-id"
+          type="text"
+          placeholder="(C)"
+        />
+
+        <p class="reserv-text">Insira a quantidade de litros por habitante</p>
+        <input
+          class="reserv-input"
+          id="CDinput-D-id"
+          type="text"
+          placeholder="(D)"
+        />
+
+        <p class="reserv-text">
+          Insira a quantidade de dias que serão abastecidos
+        </p>
+        <input
+          class="reserv-input"
+          id="CDinput-E-id"
+          type="text"
+          placeholder="(E)"
+        />
+
+        <div class="calc-reset-button">
+          <button class="calcular-button" onclick="getValueCD()">
+            Calcular
+          </button>
+          <button
+            class="calcular-button"
+            onclick="eraseValueCD('CDresult-id', 'CDinput-A-id', 'CDinput-B-id', 'CDinput-C-id', 'CDinput-D-id', 'CDinput-E-id')"
+          >
+            Resetar
+          </button>
+        </div>
+      </div>
+
+      <div class="calculadora-container-CD">
+        <input
+          class="calculadora-input"
+          type="text"
+          placeholder="Informação aqui"
+          disabled
+          id="calculadora-input-four"
+        />
+        <div>
+          <button
+            class="calc-button"
+            onclick="addInputCD('calculadora-input-four', 'CDinput-A-id')"
+          >
+            Adicionar (A)
+          </button>
+          <button
+            class="calc-button"
+            onclick="addInputCD('calculadora-input-four', 'CDinput-B-id')"
+          >
+            Adicionar (B)
+          </button>
+          <button
+            class="calc-button"
+            onclick="deleteValue('calculadora-input-four')"
+          >
+            Resetar
+          </button>
+        </div>
+        <div>
+          <button
+            class="calc-button"
+            onclick="addInputCD('calculadora-input-four', 'CDinput-C-id')"
+          >
+            Adicio. (C)
+          </button>
+          <button
+            class="calc-button"
+            onclick="addInputCD('calculadora-input-four', 'CDinput-D-id')"
+          >
+            Adicion. (D)
+          </button>
+          <button
+            class="calc-button"
+            onclick="addInputCD('calculadora-input-four', 'CDinput-E-id')"
+          >
+            Adicion. (E)
+          </button>
+        </div>
+        <div class="calculadora-div">
+          <button
+            id="one-button"
+            class="number-button"
+            onclick="getNumberCalc('one-button', 'calculadora-input-four')"
+          >
+            1
+          </button>
+          <button
+            id="two-button"
+            class="number-button"
+            onclick="getNumberCalc('two-button', 'calculadora-input-four')"
+          >
+            2
+          </button>
+          <button
+            id="three-button"
+            class="number-button"
+            onclick="getNumberCalc('three-button', 'calculadora-input-four')"
+          >
+            3
+          </button>
+          <button
+            id="four-button"
+            class="number-button"
+            onclick="getNumberCalc('four-button', 'calculadora-input-four')"
+          >
+            4
+          </button>
+          <button
+            id="five-button"
+            class="number-button"
+            onclick="getNumberCalc('five-button', 'calculadora-input-four')"
+          >
+            5
+          </button>
+          <button
+            id="six-button"
+            class="number-button"
+            onclick="getNumberCalc('six-button', 'calculadora-input-four')"
+          >
+            6
+          </button>
+          <button
+            id="seven-button"
+            class="number-button"
+            onclick="getNumberCalc('seven-button', 'calculadora-input-four')"
+          >
+            7
+          </button>
+          <button
+            id="eight-button"
+            class="number-button"
+            onclick="getNumberCalc('eight-button', 'calculadora-input-four')"
+          >
+            8
+          </button>
+          <button
+            id="nine-button"
+            class="number-button"
+            onclick="getNumberCalc('nine-button', 'calculadora-input-four')"
+          >
+            9
+          </button>
+          <button
+            id="zero-button"
+            class="number-button"
+            onclick="getNumberCalc('zero-button', 'calculadora-input-four')"
+          >
+            0
+          </button>
+          <button
+            id="point-button"
+            class="number-button"
+            onclick="getNumberCalc('point-button', 'calculadora-input-four')"
+          >
+            .
+          </button>
+        </div>
+      </div>
+
+      <div class="result-div-info-CD">
+        <input
+          class="result-input"
+          type="text"
+          id="CDresult-id"
+          disabled
+          placeholder="Valor"
+        />
+      </div>
+    </div>
+    <div class="bottom-bar-main-div">
+      <div class="bottom-bar-div">
+        <div class="bottom-info-div">
+          <a class="bottom-link" href="">Trabalhe conosco</a>
+          <a class="bottom-link" href="">Termos de uso</a>
+          <a class="bottom-link" href="">Política de privacidade</a>
+          <a class="bottom-link" href="">Política de cookies</a>
+        </div>
+        <div class="center-div">
+          <div class="right-div">
+            <h1>
+              <a class="mini-title-text" href="arqcalc.html">ArqCalc</a>
+            </h1>
+            <p class="right-text">
+              All rights reserved. ArqCalc 2021-2022 ISSN 0719-8906 Todas as
+              imagens são de cada escritório ou fotógrafo mencionado.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="media-main-div">
+        <div class="media-info-insta">
+          <a href="https://www.instagram.com/jvl.arq/"
+            ><img class="insta-logo" src="instalogo.png" alt=""
+          /></a>
+          <p class="insta-info">Siga-nos no instagram.</p>
+        </div>
+        <div class="media-info-insta">
+          <a href="https://www.linkedin.com/in/jvl-arqui/"
+            ><img class="linkedin-logo" src="likedin.png" alt=""
+          /></a>
+          <p class="insta-info">Siga-nos no LinkedIn.</p>
+        </div>
+      </div>
+      <p class="ass-info">By JV & AMD</p>
+    </div>
+  </body>
+</html>

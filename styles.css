@@ -1,0 +1,570 @@
+p {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 75px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  margin: 0;
+  background-color: rgb(233, 241, 241);
+}
+
+input {
+  margin: 0;
+}
+
+.title-div {
+  position: fixed;
+  display: flex;
+  height: 70px;
+  width: 100%;
+  top: 0;
+  background-color: rgb(93, 155, 155);
+  align-items: center;
+  justify-content: start;
+}
+
+.title-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  background-color: rgb(108, 153, 153);
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  padding: 7px;
+  margin-left: 50px;
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+.title-text:hover {
+  background-color: rgb(165, 202, 202);
+  box-shadow: 2px 2px 15px gray;
+}
+
+.slogan-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  margin-left: 20px;
+  text-decoration: underline;
+}
+
+.search-box-div {
+  display: flex;
+  height: 100%;
+  margin-left: 50px;
+  align-items: end;
+}
+
+.search-box-input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  height: 30px;
+  width: 320px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+  box-shadow: 1px 1px 10px gray;
+}
+
+.info-div {
+  position: absolute;
+  display: flex;
+  right: 20px;
+  justify-content: space-evenly;
+  width: 200px;
+}
+
+.about-button,
+.social-media-button,
+.portfolio-button,
+.login-button {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(108, 153, 153);
+  border-style: solid;
+  border-color: white;
+  border-width: 0.5px;
+  border-radius: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+.about-button:hover,
+.social-media-button:hover,
+.portfolio-button:hover,
+.login-button:hover {
+  background-color: rgb(43, 61, 61);
+  box-shadow: 1px 1px 15px gray;
+}
+
+.sidebar-div {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 700px;
+  background-color: rgb(238, 244, 245);
+  margin-top: 70px;
+  top: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: -0.3px;
+  border-color: white;
+}
+
+.menu-div {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(129, 160, 159);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: overline;
+  color: white;
+}
+
+.lateral-button-div {
+  display: flex;
+  flex-direction: column;
+  height: 170px;
+  background-color: rgb(255, 255, 255);
+  align-items: center;
+  justify-content: space-between;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 0.4px;
+  border-color: rgb(129, 160, 159);
+}
+
+.area-construida-button,
+.indice-aproveitamento-button,
+.area-permeavel-button {
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background-color: rgb(57, 105, 105);
+  width: 100%;
+  border-style: solid;
+  border-color: white;
+  border-width: 0.5px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+
+.function-div {
+  display: flex;
+  height: 250px;
+  background-color: rgb(183, 219, 219);
+  margin-left: 205px;
+  margin-right: 5px;
+  margin-bottom: 15px;
+}
+
+.textbox-div {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(57, 105, 105);
+  width: 400px;
+  align-items: center;
+  justify-content: space-between;
+  border-style: solid;
+  border-width: -1px;
+  border-color: rgb(31, 58, 58);
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.function-div-cd {
+  display: flex;
+  height: 400px;
+  background-color: rgb(183, 219, 219);
+  margin-left: 205px;
+  margin-right: 0px;
+  margin-bottom: 15px;
+}
+
+.textbox-div-cd {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(57, 105, 105);
+  width: 400px;
+  align-items: center;
+  justify-content: space-around;
+  border-style: solid;
+  border-width: -1px;
+  border-color: rgb(31, 58, 58);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.pav-text,
+.edif-text,
+.people-text,
+.reserv-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.pav-input,
+.edif-input,
+.people-input,
+.reserv-input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  height: 30px;
+  width: 320px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.aconst-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  text-decoration: underline;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 10px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 5px;
+  margin: 0;
+}
+
+.site-text,
+.ac-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.site-input,
+.dimension-input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  height: 30px;
+  width: 320px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.calc-reset-button {
+  display: block;
+  align-items: center;
+  width: auto;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.calcular-button {
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(108, 153, 153);
+  border-style: solid;
+  border-color: white;
+  border-width: 0.5px;
+  border-radius: 5px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: color 0.4s, background-color 0.4s;
+}
+
+.calcular-button:hover {
+  color: rgb(108, 153, 153);
+  background-color: white;
+  border-style: solid;
+  border-color: rgb(72, 100, 100);
+}
+
+.calculadora-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  margin-left: 50px;
+  margin-bottom: 17px;
+}
+
+.calculadora-container-CD {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  margin-left: 50px;
+  margin-bottom: 80px;
+}
+
+.calculadora-input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  background-color: white;
+  height: 20px;
+  width: 205px;
+  border: none;
+  border-radius: 5px;
+  padding-left: 15px;
+  margin-bottom: 5px;
+}
+
+.calc-button {
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background-color: rgb(108, 153, 153);
+  border-style: solid;
+  border-color: white;
+  border-width: 0.5px;
+  border-radius: 5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-bottom: 2.5px;
+  cursor: pointer;
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+.calc-button:hover {
+  background-color: rgb(43, 61, 61);
+  box-shadow: 1px 1px 15px gray;
+}
+
+.calculadora-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 230px;
+  height: 160px;
+  margin-top: 0px;
+}
+
+.number-button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: rgb(240, 247, 248);
+  color: rgb(72, 100, 100);
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: rgb(72, 100, 100);
+  border-radius: 5px;
+  margin: 3px;
+  cursor: pointer;
+  transition: box-shadow 0.4s, background-color 0.4s;
+}
+
+.number-button:hover {
+  box-shadow: 1px 1px 10px 0.1px gray;
+  background-color: white;
+}
+
+.result-div-info {
+  height: 150px;
+  width: 200px;
+  margin-left: 50px;
+  margin-top: 45px;
+}
+
+.result-div-info-CD {
+  height: 150px;
+  width: 200px;
+  margin-left: 50px;
+  margin-top: 120px;
+}
+
+.result-input {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(68, 68, 68);
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  height: 100%;
+  width: 100%;
+  box-shadow: 1px 1px 15px gray;
+}
+
+.bottom-bar-main-div {
+  display: flex;
+  height: 100px;
+  background-color: rgb(108, 153, 153);
+}
+
+.bottom-bar-div {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  background-color: rgb(108, 153, 153);
+  margin-left: 205px;
+}
+
+.center-div {
+  display: flex;
+  height: 80px;
+  width: 500px;
+  justify-content: start;
+}
+
+.right-div {
+  display: flex;
+  height: 100%;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mini-title-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  background-color: rgb(108, 153, 153);
+  border-style: solid;
+  border-color: white;
+  border-radius: 7px;
+  border-width: 0.7px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-top: 0px;
+  transition: background-color 0.4s, box-shadow 0.4s;
+}
+
+.right-text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 10px;
+  border-style: solid;
+  border-width: 0.5px;
+  border-radius: 5px;
+  margin-left: 15px;
+}
+
+.bottom-info-div {
+  display: flex;
+  width: 500px;
+  height: 20px;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.bottom-link {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+
+.media-main-div {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(108, 153, 153);
+  justify-content: space-evenly;
+  margin-left: 20px;
+}
+
+.media-info-insta {
+  display: flex;
+  background-color: rgb(108, 153, 153);
+  align-items: center;
+}
+
+.insta-logo {
+  height: 32px;
+  border-radius: 15px;
+}
+
+.linkedin-logo {
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.insta-info {
+  display: inline-block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  color: white;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 0.5px;
+  padding: 5px 10px;
+  margin-left: 10px;
+  height: min-content;
+}
+
+.ass-info {
+  position: absolute;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  color: white;
+  margin-top: 60px;
+  right: 20px;
+  border-style: solid;
+  border-color: black;
+  border-radius: 5px;
+  border-width: 0.5px;
+  padding: 5px 10px;
+}
